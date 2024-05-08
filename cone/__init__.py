@@ -17,7 +17,7 @@ def parameterized_cone(x: torch.Tensor, beta: torch.Tensor) -> torch.Tensor:
 
 class ParameterizedCone(nn.Module):
 
-    def __init__(self, beta: torch.Tensor | None) -> torch.Tensor:
+    def __init__(self, beta: torch.Tensor | None = None) -> torch.Tensor:
         self.beta = beta if beta is not None else nn.Parameter(torch.ones(1))
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
